@@ -140,7 +140,7 @@ Rectangle {
                     id: buttonSystemManagement;
                     text: TabConstants.systemManagementTab;
                     width: 400;
-                    onClicked: function(){
+                     onClicked: function(){
                         tabButtons.x = tabButtons.tempX;
                         tabButtons.changeButtonActiveTab(this);
                         tabButtons.toggle = true;
@@ -206,48 +206,11 @@ Rectangle {
         }
 
     }
-    // Заглушка Системных настроек
-    Grid {
-        id: systemManagementGrid
+
+    SystemTab {
+        id: portProtonSystemTab
         visible: tabs.currentTab == TabConstants.systemManagementTab
-
-        columns: 3
-        spacing: 2
-
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        Layout.topMargin: 190
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.bottomMargin: 90
-
-        Rectangle {
-            color: "red";
-            width: 50;
-            height: 50;
-        }
-        Rectangle {
-            color: "green";
-            width: 20;
-            height: 50;
-        }
-        Rectangle {
-            color: "blue";
-            width: 50;
-            height: 20;
-        }
-        Rectangle {
-            color: "cyan";
-            width: 50;
-            height: 50;
-        }
-        Rectangle {
-            color: "magenta";
-            width: 10;
-            height: 10;
-        }
+        model: core_app.games
     }
 
     // PortProton Games
